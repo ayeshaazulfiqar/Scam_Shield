@@ -4,3 +4,5 @@ tldextract
 python-whois
 requests
 pydantic
+
+streamlit
