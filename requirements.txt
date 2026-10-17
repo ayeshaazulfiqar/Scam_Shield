@@ -1,0 +1,6 @@
+gradio
+google-genai
+tldextract
+python-whois
+requests
+pydantic
