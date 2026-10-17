@@ -1,4 +1,5 @@
 import html
+import os
 import gradio as gr
 from agent.core import analyze
 
@@ -70,4 +71,4 @@ with gr.Blocks(title="Scam Shield") as demo:
     gr.Markdown(f"<small>{UI['English']['privacy']}<br>{UI['Urdu']['privacy']}</small>")
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
