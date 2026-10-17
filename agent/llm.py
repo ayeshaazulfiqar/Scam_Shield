@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from google import genai
 from google.genai import types
 
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
 
 class Verdict(BaseModel):
     risk: Literal["Safe", "Suspicious", "Dangerous"]
