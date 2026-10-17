@@ -1,0 +1,11 @@
+id,label,scam_type,text
+101,legit,none,HBL: Your debit card ending 4521 will expire this month. Request a replacement in the HBL Mobile app or at any branch.
+102,legit,none,TCS: Your parcel 7788123456 is out for delivery today. Track it at https://www.tcsexpress.com/track
+103,legit,none,Reminder: your electricity bill is due tomorrow. A late payment surcharge applies after the due date. Pay through your bank app.
+104,legit,none,Your verification code for Easypaisa login is 561203. It is valid for 5 minutes. Never share this code.
+105,legit,none,Jazz: Your monthly package expires on 31 Oct. Dial *111# to renew it.
+106,scam,call_script,"Sir, this is the bank's fraud department. Your card is compromised. Please read me the 3 digits on the back of the card to secure it."
+107,scam,impersonation,"Bhai mera account hack ho gaya hai, urgent paise chahiye. Easypaisa kar do 0300-0000000 par, shaam tak wapis kar dunga."
+108,scam,job_scam,"We reviewed your CV and shortlisted you for a remote role at a multinational company. To proceed, pay Rs. 3,000 for the background check via JazzCash."
+109,scam,bank_impersonation,Your Meezan Bank statement is ready. View it here: https://meezanbank-statements.com/login
+110,scam,government_scheme,NADRA: Your CNIC verification is pending. Update your details to avoid suspension of your SIM: nadra-update.xyz
