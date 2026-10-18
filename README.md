@@ -51,6 +51,7 @@ flowchart LR
     D --> E["Gemini reasoning<br/>message plus tool evidence"]
     E --> F["Structured JSON verdict"]
     F --> G["Result card in English or Urdu"]
+
 ```
 
 1. **URL analyzer (pure Python):** finds links and checks lookalike domains against official brand domains, URL shorteners, IP-address links, suspicious domain endings, subdomain count, HTTPS, and domain age via WHOIS.
@@ -105,16 +106,17 @@ Test sets and raw results are in the [`data/`](data/) folder.
 - This is an assistant, not a replacement for reporting scams to the authorities. Always verify through the official channel.
 
 ## 🗂️ Project structure
+```
 ├── agent/
-│ ├── core.py # agent pipeline: decides which tools to call
-│ ├── url_tools.py # URL analyzer
-│ ├── patterns.py # pattern matcher
-│ └── llm.py # Gemini call and structured JSON verdict
-├── streamlit_app.py # web UI (live demo)
-├── app.py # Gradio version of the UI
-├── data/ # test sets and evaluation results
+│   ├── core.py          # agent pipeline: decides which tools to call
+│   ├── url_tools.py     # URL analyzer
+│   ├── patterns.py      # pattern matcher
+│   └── llm.py           # Gemini call and structured JSON verdict
+├── streamlit_app.py     # web UI (live demo)
+├── app.py               # Gradio version of the UI
+├── data/                # test sets and evaluation results
 └── requirements.txt
-
+```
 
 ## 🚀 Setup
 
