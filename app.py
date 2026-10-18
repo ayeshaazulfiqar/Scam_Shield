@@ -68,7 +68,7 @@ with gr.Blocks(title="Scam Shield") as demo:
     out = gr.HTML()
     gr.Examples(examples=EXAMPLES, inputs=[text])
     btn.click(run, [text, lang], out)
-    gr.Markdown(f"<small>{UI['English']['privacy']}<br>{UI['Urdu']['privacy']}</small>")
+    gr.Markdown(f"<small>{UI['English']['privacy']}</small><div dir='rtl' style='text-align:right'><small>{UI['Urdu']['privacy']}</small></div>")
 
 if __name__ == "__main__":
     demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
