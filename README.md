@@ -46,8 +46,8 @@ The agent decides which tools to call based on the input (no link means no URL c
 flowchart LR
     A["User pastes a message or link"] --> B{"Contains a link?"}
     B -- yes --> C["URL analyzer<br/>lookalike domains, shorteners,<br/>risky endings, domain age"]
-    B -- no --> D
-    C --> D["Pattern matcher<br/>local scam rules and legit signals"]
+    B -- no --> D["Pattern matcher<br/>local scam rules and legit signals"]
+    C --> D
     D --> E["Gemini reasoning<br/>message plus tool evidence"]
     E --> F["Structured JSON verdict"]
     F --> G["Result card in English or Urdu"]
