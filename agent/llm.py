@@ -59,8 +59,9 @@ TOOL FINDINGS (may be empty):
             if resp.parsed is None:
                 raise ValueError("Model returned unparsable output")
             return resp.parsed
-        except Exception:
-            if attempt == retries:
+        except Exception as ex:
+            msg = str(ex)
+            if "429" in msg or "RESOURCE_EXHAUSTED" in msg or attempt == retries:
                 raise
             time.sleep(2 * (attempt + 1))
 

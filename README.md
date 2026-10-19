@@ -42,17 +42,7 @@ Paste a message or link, pick Urdu or English, and get an answer in seconds:
 
 The agent decides which tools to call based on the input (no link means no URL check), then combines the evidence in one reasoning step.
 
-```mermaid
-flowchart LR
-    A["User pastes a message or link"] --> B{"Contains a link?"}
-    B -- yes --> C["URL analyzer<br/>lookalike domains, shorteners,<br/>risky endings, domain age"]
-    B -- no --> D["Pattern matcher<br/>local scam rules and legit signals"]
-    C --> D
-    D --> E["Gemini reasoning<br/>message plus tool evidence"]
-    E --> F["Structured JSON verdict"]
-    F --> G["Result card in English or Urdu"]
-
-```
+<p align="center"><img src="docs/pipeline.png" alt="Scam Shield pipeline" width="95%"></p>
 
 1. **URL analyzer (pure Python):** finds links and checks lookalike domains against official brand domains, URL shorteners, IP-address links, suspicious domain endings, subdomain count, HTTPS, and domain age via WHOIS.
 2. **Pattern matcher (rules and regex):** local scam types such as prize/lottery, wallet and bank impersonation, OTP requests, courier fees, job offers and government payment schemes, plus signals of legitimate messages.
