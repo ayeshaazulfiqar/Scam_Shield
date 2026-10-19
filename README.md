@@ -68,7 +68,7 @@ The agent decides which tools to call based on the input (no link means no URL c
 | Agent logic | Python functions |
 | URL checks | `tldextract`, `python-whois` |
 | Web UI | Streamlit (live demo), Gradio (alternative `app.py`) |
-| Hosting | Streamlit Community Cloud |
+| Hosting | Streamlit Community Cloud (deployed from a synced copy of this repository, because the platform needs admin rights on the repo it deploys) |
 | Development | Google Colab, GitHub |
 
 AI coding assistants were used as development helpers. We tested and reviewed the code ourselves.
@@ -107,6 +107,8 @@ Test sets and raw results are in the [`data/`](data/) folder.
 ├── streamlit_app.py     # web UI (live demo)
 ├── app.py               # Gradio version of the UI
 ├── data/                # test sets and evaluation results
+├── docs/                # pipeline diagram
+├── screenshots/         # README images
 └── requirements.txt
 ```
 
