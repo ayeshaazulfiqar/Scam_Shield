@@ -12,7 +12,8 @@ URL_RE = re.compile(
 )
 
 SHORTENERS = {"bit.ly", "tinyurl.com", "t.co", "goo.gl", "is.gd", "cutt.ly", "rb.gy",
-              "shorturl.at", "ow.ly", "bit.do", "tiny.cc", "t.ly"}
+              "shorturl.at", "ow.ly", "bit.do", "tiny.cc", "t.ly",
+              "short.gy", "rebrand.ly", "buff.ly", "lnkd.in", "s.id"}
 SUSPICIOUS_TLDS = {"xyz", "top", "click", "link", "icu", "buzz", "site", "online", "live",
                    "work", "support", "loan", "tk", "ml", "ga", "cf", "gq", "monster",
                    "cyou", "rest", "vip"}

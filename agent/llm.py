@@ -63,3 +63,12 @@ TOOL FINDINGS (may be empty):
             if attempt == retries:
                 raise
             time.sleep(2 * (attempt + 1))
+
+
+EXTRACT_PROMPT = """Transcribe all the text visible in this screenshot of a message exactly as written, including links, phone numbers and the sender name. Output only the transcribed text. If there is no readable text, output exactly NO_TEXT."""
+
+def extract_text(image_bytes, mime_type="image/png"):
+    part = types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
+    cfg = types.GenerateContentConfig(temperature=0)
+    resp = _get_client().models.generate_content(model=MODEL, contents=[part, EXTRACT_PROMPT], config=cfg)
+    return (resp.text or "").strip()
