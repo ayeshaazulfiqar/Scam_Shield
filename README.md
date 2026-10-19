@@ -5,6 +5,7 @@
 **An AI agent that checks suspicious SMS, WhatsApp messages and links, and explains in simple Urdu or English why they look like scams.**
 
 [![Live demo](https://img.shields.io/badge/Live%20demo-open%20the%20app-ff4b4b?style=for-the-badge)](https://scamshieldapp-gw873grbsmcqdnx8p7qhet.streamlit.app/#scam-shield)
+[![Demo video](https://img.shields.io/badge/Demo-video-blue?style=for-the-badge)](https://drive.google.com/file/d/1wxKpfFBnjK3OGEDilpKL3hp0DPYD4c-R/view?usp=drive_link)
 
 
 ![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
@@ -36,7 +37,7 @@ Paste a message or link, pick Urdu or English, and get an answer in seconds:
 
 ## 📸 Screenshots
 
-<table><tr><td align="center" valign="top" width="25%"><img src="screenshots/input-screen.jpg" alt="Paste a message, pick a language"><br><sub>Paste a message, pick a language</sub></td><td align="center" valign="top" width="25%"><img src="screenshots/safe-result.jpg" alt="A genuine OTP message is marked Safe"><br><sub>A genuine OTP message is marked Safe</sub></td><td align="center" valign="top" width="25%"><img src="screenshots/dangerous-result.jpg" alt="A fake prize message is marked Dangerous"><br><sub>A fake prize message is marked Dangerous</sub></td><td align="center" valign="top" width="25%"><img src="screenshots/urdu-result.jpg" alt="The same result in Urdu"><br><sub>The same result in Urdu</sub></td></tr></table>
+<table><tr><td align="center" valign="top" width="50%"><img src="screenshots/input-screen.jpg" alt="Paste a message or upload a screenshot"><br><sub>Paste a message or upload a screenshot</sub></td><td align="center" valign="top" width="50%"><img src="screenshots/safe-result.jpg" alt="A genuine OTP message is marked Safe"><br><sub>A genuine OTP message is marked Safe</sub></td></tr><tr><td align="center" valign="top" width="50%"><img src="screenshots/dangerous-result.jpg" alt="A fake prize message is marked Dangerous"><br><sub>A fake prize message is marked Dangerous</sub></td><td align="center" valign="top" width="50%"><img src="screenshots/urdu-result.jpg" alt="The same kind of result in Urdu"><br><sub>The same kind of result in Urdu</sub></td></tr></table>
 
 ## 🧠 How it works
 
@@ -57,12 +58,13 @@ The agent decides which tools to call based on the input (no link means no URL c
 - Urdu and English output
 - Evidence from tools, not only the model's opinion
 - The app does not store messages
+- Screenshot input: the text is extracted with Gemini vision, then analyzed
 
 ## 🧰 Tech stack and AI usage
 
 | Part | Tool |
 |---|---|
-| LLM | **Google Gemini API**, model `gemini-3.1-flash-lite` (free tier): reasoning, structured JSON output, Urdu generation |
+| LLM | **Google Gemini API**, model `gemini-3.1-flash-lite` (free tier): reasoning, structured JSON output, Urdu generation and screenshot text extraction (vision) |
 | Agent logic | Python functions |
 | URL checks | `tldextract`, `python-whois` |
 | Web UI | Streamlit (live demo), Gradio (alternative `app.py`) |
@@ -124,7 +126,7 @@ Test sets and raw results are in the [`data/`](data/) folder.
 
 | Who | Contribution |
 |---|---|
-| **Ayesha Zulfiqar** ([@ayeshaazulfiqar](https://github.com/ayeshaazulfiqar)) | Backend agent, Gemini integration, URL analyzer, pattern matcher |
+| **Ayesha Zulfiqar** ([@ayeshaazulfiqar](https://github.com/ayeshaazulfiqar)) | Backend agent, Gemini integration, URL analyzer, pattern matcher, screenshot text extraction |
 | **Laiba Khan** ([@laibakh4n](https://github.com/laibakh4n)) | Test set, web UI, evaluation, deployment, demo video |
 
 Built for the NYLP AI Hackathon 2026.
